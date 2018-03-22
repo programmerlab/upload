@@ -52,11 +52,11 @@
 
 
                                     <div class="master-excel-file uploader-progress" style="position:relative;">
-                                        <p><span class="upload-text">Uploading… contact file.xls</span><span class="min-ago"><span class="excel-dot"><a href="#"><i class="fa fa-window-close"></i></a></span></span>
+                                        <p><span class="upload-text">Uploading… 100%</span><span class="min-ago"><span class="excel-dot"><a href="#"><i class="fa fa-window-close"></i></a></span></span>
 
                                         </p>
                                         <div class="row">
-                                            <div class="progress-wrap progress" data-progress-percent="25"><div class="progress-bar progress" style="left: 103.5px;"></div>
+                                            <div class="progress-wrap progress" data-progress-percent="25"><div class="progress-bar progress" style="left: 103.5px;">100%</div>
                                             </div>
                                         </div>
                                     </div>
@@ -160,6 +160,9 @@
             onUploadProgress: function (id, percent) {
             $('.progress-bar').css('left', percent + '%');
             console.log('percent=' + percent);
+            
+            $('.upload-text').html('Uploading…' + fname+'<b style="margin-left:50px">'+percent+'%</b>');
+            
 
             var img = "https://cdn2.iconfinder.com/data/icons/flat-files-icons-1/128/files-48.png";
             if (percent == "100") {
