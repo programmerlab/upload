@@ -2,7 +2,7 @@
 
 function createThumbnail($filename) {
      
-    $final_width_of_image = 400;
+    $final_width_of_image = 100;
 	$path_to_image_directory = 'images/fullsized/';
 	$path_to_thumbs_directory = 'images/thumbs/';
      
@@ -13,7 +13,7 @@ function createThumbnail($filename) {
     } else if (preg_match('/[.](png)$/', $filename)) {
         $im = imagecreatefrompng($path_to_image_directory . $filename);
     }elseif (preg_match('/[.](bmp)$/', $filename)) {
-    	$im = imageCreateFrombmp($path_to_image_directory . $filename);
+    	$im = imageCreatefrombmp($path_to_image_directory . $filename);
     }
      
     $ox = imagesx($im);
@@ -31,6 +31,8 @@ function createThumbnail($filename) {
            die("There was a problem. Please try again!");
       } 
        }
+ 
     imagejpeg($nm, $path_to_thumbs_directory . $filename);
-    
+    $tn = '<img src="' . $path_to_thumbs_directory . $filename . '" alt="image" />';
+    echo $tn;
 }

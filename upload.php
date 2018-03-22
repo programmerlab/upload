@@ -17,6 +17,19 @@ if(isset($_FILES['file'])) {
     }
 } 
  // upload all files
+
+if(isset($target)){
+	
+file_put_contents('files/'.$_FILES['file']['name'], file_get_contents($target));
+
+}else{
+	
 file_put_contents('files/'.$_FILES['file']['name'], file_get_contents($_FILES['file']['tmp_name']));
+
+}
+
+
+
+
 $path= $_SERVER['HTTP_HOST'].'/files'.$_FILES['file']['name'];
 echo   $path; 

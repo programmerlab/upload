@@ -47,11 +47,11 @@ foreach (glob("files/*") as $filename) {
 	}
 
  
-$pdf = 'http://localhostt/upload/files/pdf.pdf';
+// $pdf = 'http://localhostt/upload/files/pdf.pdf';
 
-$imagick = new Imagick('files/pdf.pdf[0]');
-$imagick->setImageFormat('jpg');
-file_put_contents('files', $imagick);
+// $imagick = new Imagick('files/pdf.pdf[0]');
+// $imagick->setImageFormat('jpg');
+// file_put_contents('files', $imagick);
 
 
 		 
